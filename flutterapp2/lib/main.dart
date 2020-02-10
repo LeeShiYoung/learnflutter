@@ -1,11 +1,14 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutterapp2/flexLayout.dart';
+import 'package:flutterapp2/rowLayout.dart';
+import 'package:flutterapp2/wrapLayout.dart';
 // import 'package:english_words/english_words.dart';
 // import 'package:english_words/english_words.dart';
 import 'counterWidget.dart';
 import 'boxA.dart';
 import 'boxB.dart';
+import 'input.dart';
+import 'formRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +36,11 @@ class MyApp extends StatelessWidget {
             ),
         "boxA": (context) => TapBoxA(),
         "boxB": (context) => TapBoxB(),
+        "input": (context) => InputWidget(),
+        "form": (context) => FormRoute(),
+        "row": (context) => RowRoute(),
+        "flex": (context) => FlexRoute(),
+        "wrap": (context) => WrapRoute(),
       },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -131,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 child: Text('click me'),
-                onPressed: () => Navigator.pushNamed(context, "boxB")),
+                onPressed: () => Navigator.pushNamed(context, "wrap")),
           ],
         ),
       ),
