@@ -1,3 +1,5 @@
+import 'package:app_flutter/listViewRoute.dart';
+import 'package:app_flutter/scrollRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:app_flutter/contanierRoute.dart';
 import 'package:app_flutter/flexLayout.dart';
@@ -11,6 +13,7 @@ import 'boxA.dart';
 import 'boxB.dart';
 import 'input.dart';
 import 'formRoute.dart';
+import 'scrollRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -101,8 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.business), title: Text('Business')),
-          BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('School'))
+          BottomNavigationBarItem(
+              icon: Icon(Icons.business), title: Text('Business')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.school), title: Text('School'))
         ],
       ),
       body: Center(
@@ -149,8 +154,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 child: Text('click me'),
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PaddingRoute()))),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ListViewRoute()))),
           ],
         ),
       ),

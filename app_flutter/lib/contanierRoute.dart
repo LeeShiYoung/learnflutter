@@ -13,18 +13,6 @@ class _PaddingRouteState extends State<PaddingRoute> {
     return Scaffold(
       appBar: AppBar(
         title: Text('padding'),
-        actions: <Widget>[
-          UnconstrainedBox(
-            child: SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 3,
-                valueColor: AlwaysStoppedAnimation(Colors.white70),
-              ),
-            ),
-          )
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(0.0),
