@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp2/flexLayout.dart';
-import 'package:flutterapp2/rowLayout.dart';
-import 'package:flutterapp2/wrapLayout.dart';
+import 'package:app_flutter/contanierRoute.dart';
+import 'package:app_flutter/flexLayout.dart';
+import 'package:app_flutter/rowLayout.dart';
+import 'package:app_flutter/stackLayout.dart';
+import 'package:app_flutter/wrapLayout.dart';
 // import 'package:english_words/english_words.dart';
 // import 'package:english_words/english_words.dart';
 import 'counterWidget.dart';
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
         "row": (context) => RowRoute(),
         "flex": (context) => FlexRoute(),
         "wrap": (context) => WrapRoute(),
+        "stack": (context) => StackRoute()
       },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -95,6 +98,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(icon: Icon(Icons.business), title: Text('Business')),
+          BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('School'))
+        ],
+      ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -139,7 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 child: Text('click me'),
-                onPressed: () => Navigator.pushNamed(context, "wrap")),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PaddingRoute()))),
           ],
         ),
       ),
